@@ -4,7 +4,21 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  let characters = str.split("");
+  let original = characters.filter((x) => x >= 'a' && x < 'z');
+  let reverse = [...original];
+  reverse.reverse();
+  console.log(original);
+  console.log(reverse);
+  for (let i = 0; i < original.length; i ++) {
+    if (original[i] !== reverse[i])
+      return false;
+  }
+
   return true;
 }
 
 module.exports = isPalindrome;
+
+isPalindrome('hello');
